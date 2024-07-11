@@ -1,57 +1,57 @@
-# Biodiversity Dashboard Documentation
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Project Structure](#project-structure)
-3. [Dependencies](#dependencies)
-4. [Installation](#installation)
-5. [Data Loading](#data-loading)
-6. [Image Processing](#image-processing)
-7. [UI Components](#ui-components)
-8. [Server Logic](#server-logic)
-9. [Deployment](#deployment)
-10. [Conclusion](#conclusion)
-
-## Introduction
+Biodiversity Dashboard Documentation
+Table of Contents
+Introduction
+Project Structure
+Dependencies
+Installation
+Data Loading
+Image Processing
+UI Components
+Server Logic
+Deployment
+Data Processing Flow
+Conclusion
+Introduction
 The Biodiversity Dashboard is an interactive Shiny application designed to visualize biodiversity data. The dashboard allows users to select countries, species (by vernacular and scientific names), and view various statistics and visualizations related to biodiversity observations.
 
-## Project Structure
+Project Structure
 The project is organized into the following directories and files:
+
+kotlin
+Copiar código
 biodiversity_dashboard/
 ├── data/
-│ └── combined_data.csv
+│   └── combined_data.csv
 ├── modules/
-│ ├── data_loader.R
-│ ├── image_processing.R
-│ ├── plots.R
-│ ├── info_boxes.R
+│   ├── data_loader.R
+│   ├── image_processing.R
+│   ├── plots.R
+│   ├── info_boxes.R
 ├── www/
-│ └── countries.txt
+│   └── countries.txt
 ├── styles.css
 ├── ui.R
 ├── server.R
 └── shiny-server.conf
-
-csharp
-Copiar código
-
-## Dependencies
+Dependencies
 The following R packages are required for this project:
-- shiny
-- shinydashboard
-- shinycssloaders
-- leaflet
-- dplyr
-- data.table
-- httr
-- rvest
-- highcharter
-- RColorBrewer
-- reticulate
 
-## Installation
+shiny
+shinydashboard
+shinycssloaders
+leaflet
+dplyr
+data.table
+httr
+rvest
+highcharter
+RColorBrewer
+reticulate
+Installation
 To install the required R packages, run the following commands in your R console:
-```r
+
+r
+Copiar código
 install.packages(c("shiny", "shinydashboard", "shinycssloaders", "leaflet", "dplyr", "data.table", "httr", "rvest", "highcharter", "RColorBrewer", "reticulate"))
 Additionally, install any required Python packages using reticulate and ensure the virtual environment is properly set up:
 
@@ -88,7 +88,7 @@ Info boxes to display summary statistics.
 Deployment
 To deploy the application using Shiny Server, ensure the shiny-server.conf file is properly configured:
 
-plaintext
+bash
 Copiar código
 run_as shiny;
 preserve_logs true;
@@ -106,6 +106,20 @@ server {
   }
 }
 Place the project directory (biodiversity_dashboard/) under /srv/shiny-server/ and ensure the Shiny Server is running.
+
+Data Processing Flow
+The data processing flow involves several steps to ensure efficient data handling and visualization:
+
+Data Merge: Initially, a merge is performed between the multimedia and occurrence datasets. This consolidation helps in unifying the data into a single dataset. During this process, many columns deemed unnecessary were removed, reducing the dataset size from 21 GB to 4 GB.
+
+Country Filtering: A high-performance solution was developed and integrated to filter the data by country. This functionality utilizes ripgrep, enabling highly efficient searches. This allows for rapid and optimized selection of almost any country.
+
+Image Retrieval and Processing:
+
+After a country is selected via the interface, an observation image is searched for. If no image is available, a web scraping process is initiated on Wikipedia using a common URL pattern appended with the species name.
+The retrieved images are processed using a Python wrapper that crops the images circularly to create icons.
+These images are then graphically represented using the Mapbox API with clustering enabled.
+For more details on the application flow, you can visit the following link: Biodiversity Dashboard Flow
 
 Conclusion
 The Biodiversity Dashboard provides an interactive way to explore biodiversity data. The application leverages various R packages and integrates with Python for image processing, offering a comprehensive tool for visualizing and analyzing species observations.
