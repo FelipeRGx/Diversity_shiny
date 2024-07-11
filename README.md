@@ -14,7 +14,7 @@
 11. [Conclusion](#conclusion)
 
 ## Introduction
-The Biodiversity Dashboard is an interactive Shiny application designed to visualize biodiversity data. The dashboard allows users to select countries, species (by vernacular and scientific names), and view various statistics and visualizations related to biodiversity observations.
+The **Biodiversity Dashboard** is an interactive Shiny application designed to visualize biodiversity data. The dashboard allows users to select countries, species (by vernacular and scientific names), and view various statistics and visualizations related to biodiversity observations.
 
 You can access the live application [here](https://f631-35-184-27-9.ngrok-free.app/).
 
@@ -37,7 +37,8 @@ biodiversity_dashboard/
 └── shiny-server.conf
 ```
 
-##Dependencies
+
+Dependencies
 The following R packages are required for this project:
 
 shiny
@@ -55,23 +56,23 @@ Installation
 To install the required R packages, run the following commands in your R console:
 
 r
-##Copiar código
+Copiar código
 install.packages(c("shiny", "shinydashboard", "shinycssloaders", "leaflet", "dplyr", "data.table", "httr", "rvest", "highcharter", "RColorBrewer", "reticulate"))
 Additionally, install any required Python packages using reticulate and ensure the virtual environment is properly set up:
 
 r
-##Copiar código
+Copiar código
 use_virtualenv("~/.virtualenvs/r-reticulate", required = TRUE)
 Data Loading
 The data_loader.R module is responsible for loading and filtering the biodiversity data from a CSV file. The module contains functions to read the data, filter it by country, and manage the reactive data table combined_data.
 
-##Functions
+Functions
 load_data_by_country(country): Loads data filtered by the specified country using ripgrep.
 countries: List of countries loaded from a text file.
 Image Processing
 The image_processing.R module handles the retrieval and processing of species images. This includes functions to download images from Wikipedia and remove image backgrounds using OpenCV.
 
-##Functions
+Functions
 remove_background(input_path, output_path): Removes the background from an image using a circular or oval mask.
 get_wikipedia_image(query): Retrieves the URL of an image from Wikipedia based on the species name.
 UI Components
@@ -114,16 +115,12 @@ Place the project directory (biodiversity_dashboard/) under /srv/shiny-server/ a
 Flow Explanation
 The flow of the Biodiversity Dashboard is as follows:
 
-Data Merge: The multimedia and occurrence datasets were merged, resulting in a significant reduction in data size from 21 GB to 4 GB by removing unnecessary columns.
-High-Performance Filtering: A high-performance solution was implemented to filter data by country using ripgrep, allowing for efficient and quick searches.
-Species Image Retrieval: When a country is selected, the application searches for images of the observations. If no image is available, a web scraping process fetches images from Wikipedia using a common URL pattern that includes the species name.
-Image Processing: The retrieved images are processed using a Python wrapper that crops them into circular icons.
-Visualization: The processed images are displayed on a map using Mapbox, with clustering enabled for optimized visualization of multiple observations.
-The live application can be accessed here.
-
+Data Merge: The multimedia and occurrence datasets were merged, reducing data size from 21 GB to 4 GB by removing unnecessary columns.
+High-Performance Filtering: Data is filtered by country using ripgrep for efficient searches.
+Species Image Retrieval: Searches for images of observations when a country is selected. If no image is available, images are fetched from Wikipedia.
+Image Processing: Images are processed using a Python wrapper that crops them into circular icons.
+Visualization: Processed images are displayed on a map using Mapbox, with clustering for optimized visualization of multiple observations.
 Conclusion
 The Biodiversity Dashboard provides an interactive way to explore biodiversity data. The application leverages various R packages and integrates with Python for image processing, offering a comprehensive tool for visualizing and analyzing species observations.
 
 If you encounter any issues or have questions, please feel free to reach out.
-
-This documentation provides an overview of the project structure, installatio
