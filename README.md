@@ -1,5 +1,3 @@
-# Diversity_shiny
-
 # Biodiversity Dashboard Documentation
 
 ## Table of Contents
@@ -113,4 +111,3 @@ Conclusion
 The Biodiversity Dashboard provides an interactive way to explore biodiversity data. The application leverages various R packages and integrates with Python for image processing, offering a comprehensive tool for visualizing and analyzing species observations.
 
 If you encounter any issues or have questions, please feel free to reach out.
-
