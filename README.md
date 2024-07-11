@@ -18,20 +18,23 @@ The Biodiversity Dashboard is an interactive Shiny application designed to visua
 
 ## Project Structure
 The project is organized into the following directories and files:
+```plaintext
+
 biodiversity_dashboard/
 ├── data/
-│ └── combined_data.csv
+│   └── combined_data.csv
 ├── modules/
-│ ├── data_loader.R
-│ ├── image_processing.R
-│ ├── plots.R
-│ ├── info_boxes.R
+│   ├── data_loader.R
+│   ├── image_processing.R
+│   ├── plots.R
+│   ├── info_boxes.R
 ├── www/
-│ └── countries.txt
+│   └── countries.txt
 ├── styles.css
 ├── ui.R
 ├── server.R
 └── shiny-server.conf
+```
 
 csharp
 Copiar código
