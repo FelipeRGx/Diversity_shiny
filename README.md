@@ -20,7 +20,7 @@ You can access the live application [here](https://f631-35-184-27-9.ngrok-free.a
 ## Project Structure
 The project is organized into the following directories and files:
 ```plaintext
-your_project/
+Diverity/
 ├── data/
 │   └── combined_data.csv
 ├── www/
