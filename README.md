@@ -1,5 +1,8 @@
 # Biodiversity Dashboard Documentation
 
+##Try it by you self:  [Diversity Dashboard](https://ad57-35-184-27-9.ngrok-free.app) 🌎🦚
+
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Project Structure](#project-structure)
@@ -20,7 +23,7 @@ You can access the live application [here](https://f631-35-184-27-9.ngrok-free.a
 ## Project Structure
 The project is organized into the following directories and files:
 ```plaintext
-your_project/
+diversity/
 ├── data/
 │   └── combined_data.csv
 ├── www/
