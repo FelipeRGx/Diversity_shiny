@@ -1,6 +1,6 @@
 # Biodiversity Dashboard Documentation
 
-## Try it by you self:  [Diversity Dashboard](https://ad57-35-184-27-9.ngrok-free.app) 🌎🦚
+## Try it by you self:  [Diversity Dashboard](https://35a9-35-184-27-9.ngrok-free.app/) 🌎🦚
 
 
 ## Table of Contents
