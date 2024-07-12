@@ -20,7 +20,7 @@ You can access the live application [here](https://f631-35-184-27-9.ngrok-free.a
 ## Project Structure
 The project is organized into the following directories and files:
 ```plaintext
-Diverity/
+your_project/
 ├── data/
 │   └── combined_data.csv
 ├── www/
@@ -32,6 +32,13 @@ Diverity/
 │   ├── map_module.R
 │   ├── info_boxes_module.R
 │   └── charts_module.R
+├── tests/
+│   └── testthat/
+│       ├── test_helpers.R
+│       ├── test_initial_setup.R
+│       ├── test_map_module.R
+│       ├── test_info_boxes_module.R
+│       └── test_charts_module.R
 ├── server.R
 └── ui.R
 ```
