@@ -38,25 +38,27 @@ your_project/
 ```
 
 
-##Dependencies
+## Dependencies
+
 The following R packages are required for this project:
 
-shiny
-shinydashboard
-shinycssloaders
-leaflet
-dplyr
-data.table
-httr
-rvest
-highcharter
-RColorBrewer
-reticulate
-Installation
+- `shiny`
+- `shinydashboard`
+- `shinycssloaders`
+- `leaflet`
+- `dplyr`
+- `data.table`
+- `httr`
+- `rvest`
+- `highcharter`
+- `RColorBrewer`
+- `reticulate`
+
+### Installation
+
 To install the required R packages, run the following commands in your R console:
 
-r
-Copiar código
+```r
 install.packages(c("shiny", "shinydashboard", "shinycssloaders", "leaflet", "dplyr", "data.table", "httr", "rvest", "highcharter", "RColorBrewer", "reticulate"))
 Additionally, install any required Python packages using reticulate and ensure the virtual environment is properly set up:
 
