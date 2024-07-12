@@ -21,24 +21,24 @@ You can access the live application [here](https://f631-35-184-27-9.ngrok-free.a
 ## Project Structure
 The project is organized into the following directories and files:
 ```plaintext
-biodiversity_dashboard/
+your_project/
 ├── data/
 │   └── combined_data.csv
-├── modules/
-│   ├── data_loader.R
-│   ├── image_processing.R
-│   ├── plots.R
-│   ├── info_boxes.R
 ├── www/
 │   └── countries.txt
-├── styles.css
-├── ui.R
+│   └── generic_icon.png
+├── modules/
+│   ├── helpers.R
+│   ├── initial_setup.R
+│   ├── map_module.R
+│   ├── info_boxes_module.R
+│   └── charts_module.R
 ├── server.R
-└── shiny-server.conf
+└── ui.R
 ```
 
 
-Dependencies
+##Dependencies
 The following R packages are required for this project:
 
 shiny
